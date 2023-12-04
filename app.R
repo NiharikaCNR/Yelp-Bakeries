@@ -11,7 +11,6 @@ library(shinyWidgets)
 
 theme_set(theme_classic())
 
-
 tmap_mode("view")
 options(tigris_use_cache = TRUE)
 
