@@ -1,0 +1,15 @@
+.content-wrapper {
+  background-color: white;
+}
+
+.navbar {
+  background-color: maroon; !important
+}
+
+.logo {
+  background-color: #600; !important
+}
+
+.sidebar-toggle {
+  display: none;
+}
