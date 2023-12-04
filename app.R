@@ -1,3 +1,9 @@
+# https://appsilon.com/r-shiny-dashboard-templates/?utm_source=template_marketplace&utm_campaign=templates#templates
+# https://connect.appsilon.com/shiny-enterprise-demo/?utm_medium=referral&utm_source=template_marketplace&utm_campaign=templates
+# Radar map for attributes
+# Compare Bakery A vs. Bakery B.
+# Radar map of sentiment scores - comparing scores of aspects for good and bad reviews. (open/close?)
+
 library(tidyverse)
 library(tmap)
 library(sf)
@@ -16,9 +22,12 @@ options(tigris_use_cache = TRUE)
 
 # Read Files
 bakeries = read_csv("https://github.com/NiharikaCNR/Yelp-Bakeries/raw/main/data/bakeries.csv") %>% 
-  mutate(is_open = factor(is_open, levels = c(0,1)))
+  mutate(is_open = factor(is_open, levels = c(0,1)), price_range=if_else(is.na(price_range), 0, as.numeric(price_range))) %>% 
+  mutate(dollar_signs = strrep("$",price_range))
+  
 bakery_reviews = read.csv(file = 'https://github.com/NiharikaCNR/Yelp-Bakeries/raw/main/data/bakery_reviews.csv')
 incomes <- read_csv("https://github.com/NiharikaCNR/Yelp-Bakeries/raw/main/data/ca-sb-mean-incomes.csv")
+sentiment_scores <- read_csv("https://github.com/NiharikaCNR/Yelp-Bakeries/raw/main/data/sentiment_scores.csv")
 
 # Create plot data
 ## Bakeries map data
@@ -37,7 +46,8 @@ y <- 2022
 
 bakeries_map_data <- inner_join(valid_bakeries, bakeries_summary, by='business_id') %>% 
   filter(num_reviews > 50) %>% 
-  select(latitude, longitude, name, business_id, is_open, avg_rating, opening_year, closing_year) %>% 
+  inner_join(sentiment_scores) %>% 
+  select(latitude, longitude, name, business_id, is_open, avg_rating, opening_year, closing_year, sentiment_label, dollar_signs) %>% 
   st_as_sf(coords = c("longitude", "latitude"), crs = 4326)
 
 ## Zip code Income Map data
@@ -73,13 +83,20 @@ update_map <- function(y) {
   
   # Map-1: A map showing locations of open and closed bakeries in Santa Barbara, CA in year 'y'
   bakeries_map <- tm_shape(bakeries_map_data) + 
-  tm_bubbles(col='is_open_now', size='avg_rating', palette="Set1", alpha=0.7,scale=0.2, 
-             popup.vars=c('Name'='name', 'Business ID'='business_id', 'Average Rating:'='avg_rating'))
+  tm_bubbles(
+    col='is_open_now', size='avg_rating', palette="Set1", alpha=0.7,scale=0.2, 
+    popup.vars=c('Name'='name', 
+                 'Average Rating:'='avg_rating', 
+                 'Price Category:' = 'dollar_signs',
+                 'Review Verdict:'='sentiment_label', 
+                 'Business ID'='business_id'
+                )
+     )
   # tmap_leaflet(bakeries_map)
   
   # Map-2: A map showing avg. incomes of open and closed bakeries in Santa Barbara, CA in year 'y'
   zipcode_income_map <- tm_shape(zipcode_map_data) +
-    tm_polygons(col=y, alpha = 0.6, palette="Greens")
+    tm_polygons(col=y, alpha = 0.6, palette="Greens", popup.vars=c('Avg. Income: '=y))
   # tmap_leaflet(zipcode_income_map)
   
   ## Final Map: Map-1 overlayed over Map-2 
@@ -104,10 +121,16 @@ home_page_body <- function() {
   )
 }
 
-map_page_body <-function() {
+map_page_body <- function() {
   fluidPage(
     prettyRadioButtons('year', "Select a year:", choices=rev(colnames(incomes)[-1]), selected='2019', inline=T),
     leafletOutput("income_bakeries_map", height = 700),
+  )
+}
+
+sentiment_page_body <- function() {
+  fluidPage(
+    h1("Sentiment Page")
   )
 }
 
@@ -118,19 +141,19 @@ ui <- dashboardPage(
     sidebarMenu(
       id = "tabs",
       menuItem("Home", tabName = "home_page"),
-      menuItem("Map" , tabName = "map_page" )
-      # menuItem("Method", tabName = "method_page"),
+      menuItem("Map" , tabName = "map_page" ),
+      menuItem("Sentiment Analysis", tabName = "sentiment_page")
       # menuItem("Reporting Tool", tabName = "reporting_tool"),
       # menuItem("Result Summary", tabName = "result_summary") , 
       # menuItem("Team", tabName = "team_page")
       )
     ),
   body = dashboardBody( 
-    includeCSS("styles/app.css"),
+    includeCSS("https://github.com/NiharikaCNR/Yelp-Bakeries/raw/main/styles/app.css"),
     tabItems( 
       tabItem( tabName = "home_page", home_page_body() ),
-      tabItem( tabName = "map_page",  map_page_body()  )
-      # tabItem(tabName = "methods_page", method_tab_body()),
+      tabItem( tabName = "map_page",  map_page_body()  ),
+      tabItem( tabName = "sentiment_page", sentiment_page_body())
       # tabItem(tabName = "reporting_tool", reporting_tool_body()), 
       # tabItem(tabName = "result_summary"), 
       # tabItem(tabName = "team_page", team_tab_body())
