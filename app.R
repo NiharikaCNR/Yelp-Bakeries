@@ -16,11 +16,10 @@ tmap_mode("view")
 options(tigris_use_cache = TRUE)
 
 # Read Files
-bakeries = read_csv("data/bakeries.csv") %>% 
+bakeries = read_csv("https://github.com/NiharikaCNR/Yelp-Bakeries/raw/main/data/bakeries.csv") %>% 
   mutate(is_open = factor(is_open, levels = c(0,1)))
-bakery_reviews = read.csv(file = 'data/bakery_reviews.csv')
-incomes <- read_csv("data/ca-sb-mean-incomes.csv")
-bakeries_map_data <- read_csv("data/bakeries-map-data.csv")
+bakery_reviews = read.csv(file = 'https://github.com/NiharikaCNR/Yelp-Bakeries/raw/main/data/bakery_reviews.csv')
+incomes <- read_csv("https://github.com/NiharikaCNR/Yelp-Bakeries/raw/main/data/ca-sb-mean-incomes.csv")
 
 # Create plot data
 ## Bakeries map data
