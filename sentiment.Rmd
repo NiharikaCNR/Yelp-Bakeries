@@ -1,12 +1,135 @@
 ---
-title: "all-open"
+title: "sentiment"
 author: "Siyan Wang"
 date: "2023-12-04"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-open_data<-read_csv("all_open_bakeries_reviews.csv")
+library(readr)
+library(textdata)
+library(tidytext)
+library(tidyverse)
+library(dplyr)
+library(wordcloud)
+library(stringr)
+library(reshape2)
 ```
 
+# Read data
+```{r ,message=FALSE}
+all_review_data<-read_csv("bakery_reviews.csv")
 
+########## close data ###################
+close_data<-read_csv("all_closed_bakeries_reviews.csv")
+close_bad_review<-read_csv("all_closed_bakeries_negative_reviews.csv")
+close_good_review <- read_csv("all_closed_bakeries_positive_reviews.csv")
+
+############ open data ###################
+open_data<-read_csv("all_open_bakeries_reviews.csv")
+open_bad_review<-read_csv("all_open_bakeries_negative_reviews.csv")
+open_good_review <- read_csv("all_open_bakeries_positive_reviews.csv")
+
+########## dictionary #############
+food<- readLines("food.txt")
+drink<-readLines("drink.txt")
+ambiance<-readLines("ambiance.txt")
+service<-readLines("service.txt")
+par(mar = rep(0, 4)) # setting the margin
+```
+
+## Calculate the average sentiment score
+
+```{r}
+sentiment_data<-all_review_data%>%
+  #select(-user_id,-review_id)%>%
+  unnest_tokens(word,text)%>% 
+  anti_join(stop_words)%>%
+  mutate(word = str_remove_all(word, "\\d+"))%>%
+  filter(!word %in% c("",'.',",","..","'",'food','service','time','santa','barbara'))%>%
+  filter(! word %in% food)%>%
+  filter(! word %in% drink)
+
+#all review wordcloud 
+# with(count(tidy_close_data,word),
+#      wordcloud(word,n,max.words = 100,
+#                colors=brewer.pal(8, "Dark2"),random.order = FALSE))
+
+# show(sentiment_data%>%
+#   count(business_id,word,sort = TRUE))
+
+sentiment_store<-sentiment_data%>%
+  inner_join(get_sentiments("afinn")) %>%
+  count(business_id,word,value) %>% 
+   group_by(business_id) %>%
+   summarize(average_value = mean(value, na.rm = TRUE)) %>%
+   mutate(sentiment_label = ifelse(average_value > 1.5, "excellent",
+                                   ifelse(average_value > 0.7, "good", 
+                                   ifelse(average_value > 0, "below average","need work"))))
+
+write_csv(sentiment_store, "sentiment_store.csv")
+
+
+
+mean(sentiment_store$average_value)
+
+```
+## Close store sentiment score
+
+```{r}
+sentiment_data_close<-close_data%>%
+  #select(-user_id,-review_id)%>%
+  unnest_tokens(word,text)%>% 
+  anti_join(stop_words)%>%
+  mutate(word = str_remove_all(word, "\\d+"))%>%
+  filter(!word %in% c("",'.',",","..","'",'food','service','time','santa','barbara'))%>%
+  filter(! word %in% food)%>%
+  filter(! word %in% drink)
+
+#all review wordcloud 
+# with(count(tidy_close_data,word),
+#      wordcloud(word,n,max.words = 100,
+#                colors=brewer.pal(8, "Dark2"),random.order = FALSE))
+
+# show(sentiment_data%>%
+#   count(business_id,word,sort = TRUE))
+
+sentiment_store_close<-sentiment_data_close%>%
+  inner_join(get_sentiments("afinn")) %>%
+  count(business_id,word,value)%>%
+  group_by(business_id) %>%
+  summarize(average_value = mean(value, na.rm = TRUE))
+
+
+mean(sentiment_store_close$average_value)
+```
+
+## OPEN store sentiment score
+```{r}
+sentiment_data_open<-open_data%>%
+  #select(-user_id,-review_id)%>%
+  unnest_tokens(word,text)%>% 
+  anti_join(stop_words)%>%
+  mutate(word = str_remove_all(word, "\\d+"))%>%
+  filter(!word %in% c("",'.',",","..","'",'food','service','time','santa','barbara'))%>%
+  filter(! word %in% food)%>%
+  filter(! word %in% drink)
+
+#all review wordcloud 
+# with(count(tidy_close_data,word),
+#      wordcloud(word,n,max.words = 100,
+#                colors=brewer.pal(8, "Dark2"),random.order = FALSE))
+
+# show(sentiment_data%>%
+#   count(business_id,word,sort = TRUE))
+
+sentiment_store_open<-sentiment_data_open%>%
+  inner_join(get_sentiments("afinn")) %>%
+  count(business_id,word,value)%>%
+  group_by(business_id) %>%
+  summarize(average_value = mean(value, na.rm = TRUE)) %>% 
+  arrange(-average_value)
+
+
+mean(sentiment_store_open$average_value)
+```
