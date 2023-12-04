@@ -1,0 +1,20 @@
+coffee
+latte
+lattes
+vanilla
+chocolate
+milk
+Cold brew
+caramel
+almond
+cappuccino
+cinnamon
+coconut
+cream
+drink
+espresso
+mocha
+matcha
+juice
+mint
+americano

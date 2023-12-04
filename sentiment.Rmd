@@ -1,0 +1,12 @@
+---
+title: "all-open"
+author: "Siyan Wang"
+date: "2023-12-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+open_data<-read_csv("all_open_bakeries_reviews.csv")
+```
+
+
