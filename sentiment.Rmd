@@ -18,23 +18,23 @@ library(reshape2)
 
 # Read data
 ```{r ,message=FALSE}
-all_review_data<-read_csv("bakery_reviews.csv")
+all_review_data<-read_csv("data/bakery_reviews.csv")
 
 ########## close data ###################
-close_data<-read_csv("all_closed_bakeries_reviews.csv")
-close_bad_review<-read_csv("all_closed_bakeries_negative_reviews.csv")
-close_good_review <- read_csv("all_closed_bakeries_positive_reviews.csv")
+close_data<-read_csv("data/all_closed_bakeries_reviews.csv")
+close_bad_review<-read_csv("data/all_closed_bakeries_negative_reviews.csv")
+close_good_review <- read_csv("data/all_closed_bakeries_positive_reviews.csv")
 
 ############ open data ###################
-open_data<-read_csv("all_open_bakeries_reviews.csv")
-open_bad_review<-read_csv("all_open_bakeries_negative_reviews.csv")
-open_good_review <- read_csv("all_open_bakeries_positive_reviews.csv")
+open_data<-read_csv("data/all_open_bakeries_reviews.csv")
+open_bad_review<-read_csv("data/all_open_bakeries_negative_reviews.csv")
+open_good_review <- read_csv("data/all_open_bakeries_positive_reviews.csv")
 
 ########## dictionary #############
-food<- readLines("food.txt")
-drink<-readLines("drink.txt")
-ambiance<-readLines("ambiance.txt")
-service<-readLines("service.txt")
+food<- readLines("data/food.txt")
+drink<-readLines("data/drinks.txt")
+ambiance<-readLines("data/ambiance.txt")
+service<-readLines("data/service.txt")
 par(mar = rep(0, 4)) # setting the margin
 ```
 
@@ -50,7 +50,7 @@ sentiment_data<-all_review_data%>%
   filter(! word %in% food)%>%
   filter(! word %in% drink)
 
-#all review wordcloud 
+# all review wordcloud
 # with(count(tidy_close_data,word),
 #      wordcloud(word,n,max.words = 100,
 #                colors=brewer.pal(8, "Dark2"),random.order = FALSE))
@@ -58,20 +58,20 @@ sentiment_data<-all_review_data%>%
 # show(sentiment_data%>%
 #   count(business_id,word,sort = TRUE))
 
-sentiment_store<-sentiment_data%>%
+sentiment_scores<-sentiment_data%>%
   inner_join(get_sentiments("afinn")) %>%
   count(business_id,word,value) %>% 
    group_by(business_id) %>%
    summarize(average_value = mean(value, na.rm = TRUE)) %>%
-   mutate(sentiment_label = ifelse(average_value > 1.5, "excellent",
-                                   ifelse(average_value > 0.7, "good", 
-                                   ifelse(average_value > 0, "below average","need work"))))
+   mutate(sentiment_label = ifelse(average_value > 1.5, "The best!",
+                                   ifelse(average_value > 0.7, "Worth a visit", 
+                                   ifelse(average_value > 0, "Not bad","Many faults"))))
 
-write_csv(sentiment_store, "sentiment_store.csv")
+# write_csv(sentiment_score, "data/sentiment_scores.csv")
 
 
 
-mean(sentiment_store$average_value)
+mean(sentiment_scores$average_value)
 
 ```
 ## Close store sentiment score
@@ -94,14 +94,14 @@ sentiment_data_close<-close_data%>%
 # show(sentiment_data%>%
 #   count(business_id,word,sort = TRUE))
 
-sentiment_store_close<-sentiment_data_close%>%
+sentiment_scores_close<-sentiment_data_close%>%
   inner_join(get_sentiments("afinn")) %>%
   count(business_id,word,value)%>%
   group_by(business_id) %>%
   summarize(average_value = mean(value, na.rm = TRUE))
 
 
-mean(sentiment_store_close$average_value)
+mean(sentiment_scores_close$average_value)
 ```
 
 ## OPEN store sentiment score
@@ -123,7 +123,7 @@ sentiment_data_open<-open_data%>%
 # show(sentiment_data%>%
 #   count(business_id,word,sort = TRUE))
 
-sentiment_store_open<-sentiment_data_open%>%
+sentiment_scores_open<-sentiment_data_open%>%
   inner_join(get_sentiments("afinn")) %>%
   count(business_id,word,value)%>%
   group_by(business_id) %>%
@@ -131,5 +131,5 @@ sentiment_store_open<-sentiment_data_open%>%
   arrange(-average_value)
 
 
-mean(sentiment_store_open$average_value)
+mean(sentiment_scores_open$average_value)
 ```
