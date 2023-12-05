@@ -101,7 +101,7 @@ get_avg <- function(df,col=NA) {
     df <- df %>% group_by(.data[[col]]) 
   df %>% 
     summarize_at(vars(-c(business_id)), ~round(mean(.),2), .names = "{.col}") %>% 
-    mutate(business_id = 'average', .before = stars)
+    mutate(business_id = 'Average Scores', .before = stars)
 }
 
 get_max <- function(df,col=NA) {
