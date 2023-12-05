@@ -1,0 +1,277 @@
+business_id,name,is_open,postal_code,stars,Ambiance,Drinks,Food,Price,Service
+max,NA,NA,NA,1,0.11,0.21,0.39,0.38,0.13
+max,NA,NA,NA,2,0.37,0.25,0.61,0.63,0.24
+max,NA,NA,NA,3,0.8,1.41,1.56,1.04,1.03
+max,NA,NA,NA,4,2.76,3.77,4.23,3.34,4.73
+max,NA,NA,NA,5,5.35,7.07,6.74,17.1,11.88
+min,NA,NA,NA,1,-0.3,-0.18,-0.06,-0.14,-0.61
+min,NA,NA,NA,2,-0.06,-0.03,-0.03,-0.08,-0.06
+min,NA,NA,NA,3,-0.02,-0.08,-0.01,-0.07,-0.04
+min,NA,NA,NA,4,-0.01,-0.02,0,-0.07,0
+min,NA,NA,NA,5,0,0,0.01,-0.05,0.01
+average,NA,NA,NA,1,0.01,0.02,0.03,0.05,-0.05
+average,NA,NA,NA,2,0.05,0.06,0.08,0.1,0.04
+average,NA,NA,NA,3,0.13,0.18,0.15,0.17,0.17
+average,NA,NA,NA,4,0.39,0.53,0.51,0.38,0.72
+average,NA,NA,NA,5,0.95,1.34,1.2,0.96,2.04
+IDtLPgUrqorrpqSLdfMhZQ,Helena Avenue Bakery,1,93101,5,1.96,2.66,3.32,1.11,4.9
+IDtLPgUrqorrpqSLdfMhZQ,Helena Avenue Bakery,1,93101,4,0.9,0.99,1,0.19,1.32
+IDtLPgUrqorrpqSLdfMhZQ,Helena Avenue Bakery,1,93101,3,0.36,0.15,0.36,0.47,0.36
+IDtLPgUrqorrpqSLdfMhZQ,Helena Avenue Bakery,1,93101,2,0.13,0.04,0.11,0.13,0.08
+IDtLPgUrqorrpqSLdfMhZQ,Helena Avenue Bakery,1,93101,1,0.06,0.04,0.05,0.17,0.13
+bjhCtlYHrkgA5Ku8l-rB3g,Our Daily Bread,0,93105,5,0.19,0.57,0.45,0.61,1.02
+bjhCtlYHrkgA5Ku8l-rB3g,Our Daily Bread,0,93105,4,0.16,0.06,0.28,0.53,1.06
+bjhCtlYHrkgA5Ku8l-rB3g,Our Daily Bread,0,93105,1,0.05,0.04,0.07,-0.08,-0.01
+bjhCtlYHrkgA5Ku8l-rB3g,Our Daily Bread,0,93105,2,0.05,0.06,0.07,0.3,0.19
+bjhCtlYHrkgA5Ku8l-rB3g,Our Daily Bread,0,93105,3,-0,0.05,0.09,0.06,0.16
+O6RCCmz8-x4NhWJpI8KQug,Breakfast Culture Club,0,93101,5,0.75,2.07,0.52,0.52,1.23
+O6RCCmz8-x4NhWJpI8KQug,Breakfast Culture Club,0,93101,4,0.15,0.45,0.03,0,0.25
+O6RCCmz8-x4NhWJpI8KQug,Breakfast Culture Club,0,93101,3,0.1,0.19,0,0.19,0.12
+O6RCCmz8-x4NhWJpI8KQug,Breakfast Culture Club,0,93101,2,0.08,-0,0.01,0,0.01
+O6RCCmz8-x4NhWJpI8KQug,Breakfast Culture Club,0,93101,1,0.01,0.06,0.02,-0.01,-0.04
+xIGiif0TmmmGuV2-sidMSw,La Bella Rosa Bakery Cafe,1,93101,5,0.1,0.13,0.13,0.12,0.25
+xIGiif0TmmmGuV2-sidMSw,La Bella Rosa Bakery Cafe,1,93101,4,0.06,0.04,0.07,0.11,0.13
+xIGiif0TmmmGuV2-sidMSw,La Bella Rosa Bakery Cafe,1,93101,1,0,0,0.05,-0.05,-0.01
+xIGiif0TmmmGuV2-sidMSw,La Bella Rosa Bakery Cafe,1,93101,2,0,0,0,0,0.02
+xIGiif0TmmmGuV2-sidMSw,La Bella Rosa Bakery Cafe,1,93101,3,0,0,0.04,0.11,0.03
+ghLjxj4HoSHdflBEz2lIqA,Gelson's,1,93105,4,0.37,0.14,0.35,0.44,0.57
+ghLjxj4HoSHdflBEz2lIqA,Gelson's,1,93105,5,0.31,0.22,0.23,0.19,0.55
+ghLjxj4HoSHdflBEz2lIqA,Gelson's,1,93105,2,0.07,-0.01,0.02,0.01,0.06
+ghLjxj4HoSHdflBEz2lIqA,Gelson's,1,93105,3,0.05,0,0.05,0.01,0.06
+ghLjxj4HoSHdflBEz2lIqA,Gelson's,1,93105,1,0.02,0,0,0.06,0.1
+23OxrUaCvvVrwSa1z3xG-w,Recipes Bakery & Gifts: An Australian Coffee House,1,93101,5,1.03,2.38,0.59,0.65,1.39
+23OxrUaCvvVrwSa1z3xG-w,Recipes Bakery & Gifts: An Australian Coffee House,1,93101,4,0.3,0.5,0.35,0.4,0.37
+23OxrUaCvvVrwSa1z3xG-w,Recipes Bakery & Gifts: An Australian Coffee House,1,93101,3,0.1,0.21,0.05,0.04,0.02
+23OxrUaCvvVrwSa1z3xG-w,Recipes Bakery & Gifts: An Australian Coffee House,1,93101,2,0.05,0.12,0.06,0,0.15
+23OxrUaCvvVrwSa1z3xG-w,Recipes Bakery & Gifts: An Australian Coffee House,1,93101,1,0,0.06,-0.02,0.2,0.03
+7kLn2XsFwyJ-yFn4qx40TQ,Buena Onda at Mosaic Locale,1,93101,5,0.14,0,0.13,0.4,0.55
+7kLn2XsFwyJ-yFn4qx40TQ,Buena Onda at Mosaic Locale,1,93101,3,0.04,0.02,0.01,0,0.01
+7kLn2XsFwyJ-yFn4qx40TQ,Buena Onda at Mosaic Locale,1,93101,1,0,0,0,0,-0.01
+7kLn2XsFwyJ-yFn4qx40TQ,Buena Onda at Mosaic Locale,1,93101,4,-0.01,0,0,0,0.03
+7grEnJV48N6BxbEP3uxISA,Mr B Restaurant & Cafe,1,93105,5,0.08,0.03,0.06,0.06,0.28
+7grEnJV48N6BxbEP3uxISA,Mr B Restaurant & Cafe,1,93105,4,0.03,0,0.04,0,0.1
+7grEnJV48N6BxbEP3uxISA,Mr B Restaurant & Cafe,1,93105,1,-0,0,0.01,0,-0.01
+7grEnJV48N6BxbEP3uxISA,Mr B Restaurant & Cafe,1,93105,2,0,0,0,0,-0
+QS0a4snAEc-zdLeLIgTaHg,Delicious Expressions,0,93101,5,0.34,0.23,0.84,0.33,0.93
+QS0a4snAEc-zdLeLIgTaHg,Delicious Expressions,0,93101,3,0,0,0.01,0,0
+-loV4cB2Uh9TCltTRgGzWQ,Renaud's Patisserie & Bistro,1,93101,5,1.61,3.65,3.37,0.98,3.46
+-loV4cB2Uh9TCltTRgGzWQ,Renaud's Patisserie & Bistro,1,93101,4,0.59,1.18,1.34,0.62,1.12
+-loV4cB2Uh9TCltTRgGzWQ,Renaud's Patisserie & Bistro,1,93101,3,0.17,0.1,0.2,0.06,0.09
+-loV4cB2Uh9TCltTRgGzWQ,Renaud's Patisserie & Bistro,1,93101,2,0.07,0.23,0.13,0.18,0
+-loV4cB2Uh9TCltTRgGzWQ,Renaud's Patisserie & Bistro,1,93101,1,-0.04,0.06,0.09,0.38,0.04
+PT99vOEnfEwfOly9YoWvXg,Christine Dahl,0,93101,5,0.76,0.46,0.61,-0.05,0.97
+PT99vOEnfEwfOly9YoWvXg,Christine Dahl,0,93101,1,0,-0.03,-0.01,0,0.02
+WQnjp_CEYTYKBBKJDME0bQ,Vons,0,93105,3,0.02,0,0,-0.07,0.04
+WQnjp_CEYTYKBBKJDME0bQ,Vons,0,93105,2,0.01,0,0.01,-0.06,0.03
+WQnjp_CEYTYKBBKJDME0bQ,Vons,0,93105,4,0.01,0,0,0,0
+WQnjp_CEYTYKBBKJDME0bQ,Vons,0,93105,5,0,0,0.01,0,0.01
+WQnjp_CEYTYKBBKJDME0bQ,Vons,0,93105,1,-0.03,0,-0.01,0,-0.1
+LtxG9DTXCFpteVkD4SGBlw,Sevtap Winery Tasting Room,1,93101,5,1.59,0.1,1.7,0.85,2.45
+LtxG9DTXCFpteVkD4SGBlw,Sevtap Winery Tasting Room,1,93101,4,0.5,0,0.33,0.39,0.54
+LtxG9DTXCFpteVkD4SGBlw,Sevtap Winery Tasting Room,1,93101,3,0.12,0,0.08,0.1,0.13
+LtxG9DTXCFpteVkD4SGBlw,Sevtap Winery Tasting Room,1,93101,1,0.07,0.04,0.11,0,-0.06
+LtxG9DTXCFpteVkD4SGBlw,Sevtap Winery Tasting Room,1,93101,2,0.02,0,0.04,0,0.03
+VgAKmXE8B7J0I_O_R13UKQ,Santa Barbara Roasting Company,1,93101,5,2.58,7.07,0.53,2.62,3.16
+VgAKmXE8B7J0I_O_R13UKQ,Santa Barbara Roasting Company,1,93101,4,1.18,3.77,0.32,1.8,1.48
+VgAKmXE8B7J0I_O_R13UKQ,Santa Barbara Roasting Company,1,93101,3,0.36,1.41,0.05,0.44,0.5
+VgAKmXE8B7J0I_O_R13UKQ,Santa Barbara Roasting Company,1,93101,2,0.19,0.25,0.07,0.18,-0.06
+VgAKmXE8B7J0I_O_R13UKQ,Santa Barbara Roasting Company,1,93101,1,0.05,0.21,0.01,0.09,-0.12
+JZrspVMm79n_iHTYftkI0g,La Tapatia Bakery,1,93103,5,0.25,0.04,0.1,0.24,0.35
+JZrspVMm79n_iHTYftkI0g,La Tapatia Bakery,1,93103,4,0.07,0.04,0.07,0,0.04
+JZrspVMm79n_iHTYftkI0g,La Tapatia Bakery,1,93103,3,0.06,0,0.02,0,-0.04
+JZrspVMm79n_iHTYftkI0g,La Tapatia Bakery,1,93103,1,0,0,0.02,-0.05,-0.09
+JZrspVMm79n_iHTYftkI0g,La Tapatia Bakery,1,93103,2,0,0,0,0,0
+Hj44PIrCtv61ETVclzLMwg,Jeannine's American Bakery Restaurant,0,93101,5,2.3,1.75,1.62,0.84,4.78
+Hj44PIrCtv61ETVclzLMwg,Jeannine's American Bakery Restaurant,0,93101,4,1.03,0.97,1.38,0.86,2.7
+Hj44PIrCtv61ETVclzLMwg,Jeannine's American Bakery Restaurant,0,93101,3,0.55,0.26,0.31,0.36,0.53
+Hj44PIrCtv61ETVclzLMwg,Jeannine's American Bakery Restaurant,0,93101,2,0.14,0.15,0.21,0.42,0.1
+Hj44PIrCtv61ETVclzLMwg,Jeannine's American Bakery Restaurant,0,93101,1,0.03,-0.02,-0.06,0.14,-0.1
+Z0mBsgDzDnFAEC5o4X6G9g,Java Station,1,93110,5,0.68,1.79,0.44,0.61,1.39
+Z0mBsgDzDnFAEC5o4X6G9g,Java Station,1,93110,4,0.63,1.26,0.27,0.75,0.56
+Z0mBsgDzDnFAEC5o4X6G9g,Java Station,1,93110,3,0.2,0.48,0.16,0.37,0.25
+Z0mBsgDzDnFAEC5o4X6G9g,Java Station,1,93110,1,-0,0.09,-0.06,0.18,-0.09
+Z0mBsgDzDnFAEC5o4X6G9g,Java Station,1,93110,2,0,0.02,-0.01,-0.04,-0.04
+T5serOgucL236udCsZI0jA,Xanadu Bakery,0,93108,4,0.1,0.28,0.27,0.04,0.18
+T5serOgucL236udCsZI0jA,Xanadu Bakery,0,93108,5,0.02,0.12,0.04,0.06,0.14
+T5serOgucL236udCsZI0jA,Xanadu Bakery,0,93108,1,0,-0.03,-0.05,0.01,-0.15
+T5serOgucL236udCsZI0jA,Xanadu Bakery,0,93108,3,0,0.02,0.04,0.05,0.04
+T5serOgucL236udCsZI0jA,Xanadu Bakery,0,93108,2,-0.02,0.02,0.01,0.1,-0
+FH0MVF7kK0D76Hh4e7hXfQ,Jeannine's American Bakery Restaurant,1,93105,5,2.2,3.4,3.51,1,7.34
+FH0MVF7kK0D76Hh4e7hXfQ,Jeannine's American Bakery Restaurant,1,93105,4,1.42,1.38,1.9,0.92,3.51
+FH0MVF7kK0D76Hh4e7hXfQ,Jeannine's American Bakery Restaurant,1,93105,3,0.2,0.65,0.38,0.34,0.54
+FH0MVF7kK0D76Hh4e7hXfQ,Jeannine's American Bakery Restaurant,1,93105,1,-0.06,0.03,0.03,0.07,-0.17
+FH0MVF7kK0D76Hh4e7hXfQ,Jeannine's American Bakery Restaurant,1,93105,2,-0.06,0.11,0.13,0.41,0.05
+L4-_gPiqsuX50JN_-qUhNQ,Jeannine’s American Bakery & Restaurant,1,93101,5,0.36,0.52,0.33,0.19,1.24
+L4-_gPiqsuX50JN_-qUhNQ,Jeannine’s American Bakery & Restaurant,1,93101,4,0.03,0.05,0.07,0.06,0.15
+L4-_gPiqsuX50JN_-qUhNQ,Jeannine’s American Bakery & Restaurant,1,93101,2,0,0,-0,0,0
+jWhlz8LesaC7jZL9bHNe9A,Bree’Osh,1,93105,5,0.18,0.2,0.24,0,0.14
+jWhlz8LesaC7jZL9bHNe9A,Bree’Osh,1,93105,4,0.07,0.3,0.16,0.07,0.1
+jWhlz8LesaC7jZL9bHNe9A,Bree’Osh,1,93105,3,0.02,-0.01,0.02,0,0.05
+jWgZRpdHy8csA1sUz1auSw,Daniel's Bakery and Mexican Food,1,93105,4,0.02,0.03,0.01,0.09,0.05
+jWgZRpdHy8csA1sUz1auSw,Daniel's Bakery and Mexican Food,1,93105,5,0.02,0,0.03,0,0.07
+jWgZRpdHy8csA1sUz1auSw,Daniel's Bakery and Mexican Food,1,93105,3,0.01,0,0,0,0.01
+jWgZRpdHy8csA1sUz1auSw,Daniel's Bakery and Mexican Food,1,93105,1,0,0,-0,-0.07,-0.14
+8JzURExziDYuCrd7Ve9nDQ,Los Tarascos Bakery and Deli,1,93101,5,0.1,0.23,0.27,0.44,0.27
+8JzURExziDYuCrd7Ve9nDQ,Los Tarascos Bakery and Deli,1,93101,3,0.02,0.03,0.01,-0.03,0.01
+8JzURExziDYuCrd7Ve9nDQ,Los Tarascos Bakery and Deli,1,93101,1,0,0,-0.01,0.08,0.02
+8JzURExziDYuCrd7Ve9nDQ,Los Tarascos Bakery and Deli,1,93101,2,0,0,0,0,0
+8JzURExziDYuCrd7Ve9nDQ,Los Tarascos Bakery and Deli,1,93101,4,0,0.06,0.08,0.06,0.02
+DdD7j67fu8kM6DkvY4JCIA,Panaderia Veronica,0,93103,5,0.07,0.05,0.14,0.12,0.2
+DdD7j67fu8kM6DkvY4JCIA,Panaderia Veronica,0,93103,1,0,0,0,0,0
+DdD7j67fu8kM6DkvY4JCIA,Panaderia Veronica,0,93103,2,0,0,0,0,0.01
+DdD7j67fu8kM6DkvY4JCIA,Panaderia Veronica,0,93103,3,0,0,0.01,0,-0
+DdD7j67fu8kM6DkvY4JCIA,Panaderia Veronica,0,93103,4,-0,-0.02,0.04,0,0
+cQDwJjslebJv5Co7gCm2Yw,Cafe Ana,0,93101,5,0.9,0.53,0.34,0.31,1.09
+cQDwJjslebJv5Co7gCm2Yw,Cafe Ana,0,93101,4,0.5,0.35,0.08,0.11,0.33
+cQDwJjslebJv5Co7gCm2Yw,Cafe Ana,0,93101,2,0.07,-0.03,0.01,0.03,0.03
+cQDwJjslebJv5Co7gCm2Yw,Cafe Ana,0,93101,3,0.04,0.01,0.02,0.01,0.04
+cQDwJjslebJv5Co7gCm2Yw,Cafe Ana,0,93101,1,-0.03,0,0.01,0,-0.09
+m4xrhESFLaA7PiddXeg2aw,Pierre Lafond Wine Bistro,0,93101,5,0.61,0.25,0.63,0.41,1.08
+m4xrhESFLaA7PiddXeg2aw,Pierre Lafond Wine Bistro,0,93101,4,0.48,0.11,0.7,0.62,1.44
+m4xrhESFLaA7PiddXeg2aw,Pierre Lafond Wine Bistro,0,93101,3,0.27,0.03,0.37,0.22,0.43
+m4xrhESFLaA7PiddXeg2aw,Pierre Lafond Wine Bistro,0,93101,2,0.04,0.02,0.08,0.06,0.15
+m4xrhESFLaA7PiddXeg2aw,Pierre Lafond Wine Bistro,0,93101,1,0.01,-0.02,0.02,0.12,0.01
+WVNkMz4sEl35swjVtKHOFw,Alessia Patisserie & Cafe,1,93101,5,1.67,1.1,1.32,0.33,2.01
+WVNkMz4sEl35swjVtKHOFw,Alessia Patisserie & Cafe,1,93101,4,0.32,0.18,0.37,0.22,0.29
+WVNkMz4sEl35swjVtKHOFw,Alessia Patisserie & Cafe,1,93101,3,0.05,0.1,0.06,0,0.02
+WVNkMz4sEl35swjVtKHOFw,Alessia Patisserie & Cafe,1,93101,1,0,0,0,0,-0
+WVNkMz4sEl35swjVtKHOFw,Alessia Patisserie & Cafe,1,93101,2,0,0.02,0.02,0.06,0.02
+_6p_j0UL7ST3b2nvHw82eA,REBAR COFFEE + KTCHN,0,93101,5,0.81,2.55,0.8,0.26,2.2
+_6p_j0UL7ST3b2nvHw82eA,REBAR COFFEE + KTCHN,0,93101,4,0.28,0.89,0.15,0.12,0.54
+_6p_j0UL7ST3b2nvHw82eA,REBAR COFFEE + KTCHN,0,93101,2,0.1,0.23,0.02,-0.08,-0.02
+_6p_j0UL7ST3b2nvHw82eA,REBAR COFFEE + KTCHN,0,93101,3,0.1,0.33,0.08,0.04,0.06
+_6p_j0UL7ST3b2nvHw82eA,REBAR COFFEE + KTCHN,0,93101,1,-0,-0.06,-0.02,0.16,-0.24
+9uJuBPIQyrC0v9pVv3JKRQ,Panera Bread,0,93105,3,0.11,0.08,0.1,0.26,0.2
+9uJuBPIQyrC0v9pVv3JKRQ,Panera Bread,0,93105,5,0.1,0.21,0.21,0.47,0.53
+9uJuBPIQyrC0v9pVv3JKRQ,Panera Bread,0,93105,4,0.07,0.08,0.12,0.06,0.2
+9uJuBPIQyrC0v9pVv3JKRQ,Panera Bread,0,93105,2,-0.05,0.05,0.13,0.25,0.14
+9uJuBPIQyrC0v9pVv3JKRQ,Panera Bread,0,93105,1,-0.3,-0.06,-0,0.11,-0.61
+1kVnChI4aqsPw9i2PVqkkw,Fresco Cafe,1,93105,5,0.67,0.18,1.64,1.54,2.11
+1kVnChI4aqsPw9i2PVqkkw,Fresco Cafe,1,93105,4,0.5,0.32,1.01,0.79,1.22
+1kVnChI4aqsPw9i2PVqkkw,Fresco Cafe,1,93105,2,0.09,0.02,0.1,-0.01,0.08
+1kVnChI4aqsPw9i2PVqkkw,Fresco Cafe,1,93105,3,0.08,-0.08,0.15,0.31,0.18
+1kVnChI4aqsPw9i2PVqkkw,Fresco Cafe,1,93105,1,-0.05,0.05,0.09,0.28,-0.14
+aD490g5tyGScrxRZP_d1gw,Enjoy Cupcakes,0,93101,5,1.02,0.9,3.05,0.17,1.69
+aD490g5tyGScrxRZP_d1gw,Enjoy Cupcakes,0,93101,4,0.15,0.33,0.7,0.05,0.24
+aD490g5tyGScrxRZP_d1gw,Enjoy Cupcakes,0,93101,1,0.02,-0.03,-0.03,0,-0.05
+aD490g5tyGScrxRZP_d1gw,Enjoy Cupcakes,0,93101,2,0.01,0.09,0.07,0,0.01
+aD490g5tyGScrxRZP_d1gw,Enjoy Cupcakes,0,93101,3,0,0,0.02,0,-0
+5GUA13zYgw4_8F6qUMU_LA,Green Star Coffee,0,93101,5,0.25,1.33,0.08,0.17,0.43
+5GUA13zYgw4_8F6qUMU_LA,Green Star Coffee,0,93101,4,0.07,0.4,0.02,0.01,0.07
+5GUA13zYgw4_8F6qUMU_LA,Green Star Coffee,0,93101,2,0.06,0.02,-0.01,0.09,0.05
+5GUA13zYgw4_8F6qUMU_LA,Green Star Coffee,0,93101,1,0,0,0,0,0
+5GUA13zYgw4_8F6qUMU_LA,Green Star Coffee,0,93101,3,0,0.2,-0.01,0.08,0
+FQxEfhBd1gMrurP19bhK8w,Mama's Bakery & Deli,0,93111,5,0.07,0,0.27,0.08,0.42
+FQxEfhBd1gMrurP19bhK8w,Mama's Bakery & Deli,0,93111,1,0,0,0,0,0.05
+FQxEfhBd1gMrurP19bhK8w,Mama's Bakery & Deli,0,93111,2,0,0,0.03,0.08,0
+FQxEfhBd1gMrurP19bhK8w,Mama's Bakery & Deli,0,93111,3,0,0,0.02,0.02,-0
+FQxEfhBd1gMrurP19bhK8w,Mama's Bakery & Deli,0,93111,4,0,0.07,0.16,0.05,0.3
+Kg71HUigI1rnY3UMFiLx0w,Tangonadas,0,93101,5,0.6,0.15,0.1,0.24,0.57
+Kg71HUigI1rnY3UMFiLx0w,Tangonadas,0,93101,4,0.26,0.16,0.08,0.05,0.21
+Kg71HUigI1rnY3UMFiLx0w,Tangonadas,0,93101,3,0.03,0,0,0,0.02
+Kg71HUigI1rnY3UMFiLx0w,Tangonadas,0,93101,1,-0.01,0,-0.01,-0.1,-0.01
+CO5UeHEX1AcK5yRzFVr2Ew,Fresh & Easy,0,93103,4,0.06,0,0.01,-0.07,0.1
+CO5UeHEX1AcK5yRzFVr2Ew,Fresh & Easy,0,93103,3,0.01,0.03,0.01,0.04,0.07
+CO5UeHEX1AcK5yRzFVr2Ew,Fresh & Easy,0,93103,5,0.01,0.04,0.09,0.25,0.08
+CO5UeHEX1AcK5yRzFVr2Ew,Fresh & Easy,0,93103,1,0,0,0.02,0.09,0
+CO5UeHEX1AcK5yRzFVr2Ew,Fresh & Easy,0,93103,2,0,0,0.03,0.01,0
+PGVZjuHpB5s5jFMKqKdCmw,Our Daily Bread,0,93101,4,0.12,0.09,0.16,0.02,0.15
+PGVZjuHpB5s5jFMKqKdCmw,Our Daily Bread,0,93101,3,0.03,0.04,0.16,0.06,0
+PGVZjuHpB5s5jFMKqKdCmw,Our Daily Bread,0,93101,2,0.02,0,0,0,-0.01
+PGVZjuHpB5s5jFMKqKdCmw,Our Daily Bread,0,93101,5,0.02,0.01,0.06,0.16,0.11
+PGVZjuHpB5s5jFMKqKdCmw,Our Daily Bread,0,93101,1,0,-0.02,0,0.06,-0.01
+CwL56LgcMz7Bvi4xODHVSw,La Arcada Bistro,0,93101,5,0.41,0.03,0.34,0.4,1
+CwL56LgcMz7Bvi4xODHVSw,La Arcada Bistro,0,93101,4,0.36,0,0.12,0.05,0.43
+CwL56LgcMz7Bvi4xODHVSw,La Arcada Bistro,0,93101,2,0.12,0.04,0.14,0.07,-0.03
+CwL56LgcMz7Bvi4xODHVSw,La Arcada Bistro,0,93101,3,0.11,0.04,0.06,0.14,0.22
+CwL56LgcMz7Bvi4xODHVSw,La Arcada Bistro,0,93101,1,0.03,0.01,0.03,-0.14,-0.07
+hPzPpfSjgQkpWCD7YjcY-A,Lilac Pâtisserie,1,93101,5,4.7,4.25,5.49,17.1,11.88
+hPzPpfSjgQkpWCD7YjcY-A,Lilac Pâtisserie,1,93101,4,1.06,1.01,1.36,3.34,2.04
+hPzPpfSjgQkpWCD7YjcY-A,Lilac Pâtisserie,1,93101,3,0.36,0.23,0.3,1.04,0.61
+hPzPpfSjgQkpWCD7YjcY-A,Lilac Pâtisserie,1,93101,2,0.16,0.2,0.22,0.4,0.24
+hPzPpfSjgQkpWCD7YjcY-A,Lilac Pâtisserie,1,93101,1,0.1,0.11,0.08,-0.11,-0.03
+s4k1P9FHfPUzw3dqXRp7eA,LOKUM Turkish Delight & Baklava,1,93101,5,2.48,2.35,0.55,0.52,2.56
+s4k1P9FHfPUzw3dqXRp7eA,LOKUM Turkish Delight & Baklava,1,93101,3,0.21,0.16,0.05,0.16,0.06
+s4k1P9FHfPUzw3dqXRp7eA,LOKUM Turkish Delight & Baklava,1,93101,4,0.21,0.3,0.11,0.13,0.2
+s4k1P9FHfPUzw3dqXRp7eA,LOKUM Turkish Delight & Baklava,1,93101,1,0.06,0.01,0,0.17,-0.04
+s4k1P9FHfPUzw3dqXRp7eA,LOKUM Turkish Delight & Baklava,1,93101,2,0.02,0.02,0.01,0.05,-0.03
+0RxU5OglQyPVtLKC1LPgsA,Bree'osh,1,93108,5,2.71,5.69,5.02,1.14,6.52
+0RxU5OglQyPVtLKC1LPgsA,Bree'osh,1,93108,4,0.67,1.2,1.23,0.35,1.31
+0RxU5OglQyPVtLKC1LPgsA,Bree'osh,1,93108,3,0.11,0.33,0.34,0.18,0.13
+0RxU5OglQyPVtLKC1LPgsA,Bree'osh,1,93108,2,0.04,-0,0.08,0.03,0.01
+0RxU5OglQyPVtLKC1LPgsA,Bree'osh,1,93108,1,0,0.02,0.06,-0,-0.04
+VAIOtbsxdNmuhUKkQZFRlA,Renaud's Patisserie & Bistro,1,93105,5,2.2,4.55,4.58,0.89,4.63
+VAIOtbsxdNmuhUKkQZFRlA,Renaud's Patisserie & Bistro,1,93105,4,0.74,2.46,2.16,0.8,2.16
+VAIOtbsxdNmuhUKkQZFRlA,Renaud's Patisserie & Bistro,1,93105,3,0.17,0.44,0.49,0.2,0.29
+VAIOtbsxdNmuhUKkQZFRlA,Renaud's Patisserie & Bistro,1,93105,1,0.09,0.13,0.15,0.07,0.07
+VAIOtbsxdNmuhUKkQZFRlA,Renaud's Patisserie & Bistro,1,93105,2,-0.01,0.23,0.14,0.2,-0.04
+XgehM3pBZWuXi45J2dqRJQ,Green Table,1,93101,5,1.61,2.8,1.57,3.89,5.66
+XgehM3pBZWuXi45J2dqRJQ,Green Table,1,93101,4,0.29,0.67,0.37,0.97,1.14
+XgehM3pBZWuXi45J2dqRJQ,Green Table,1,93101,3,0.17,0.21,0.15,0.72,0.84
+XgehM3pBZWuXi45J2dqRJQ,Green Table,1,93101,2,0.05,-0.02,0.04,0.13,0.21
+XgehM3pBZWuXi45J2dqRJQ,Green Table,1,93101,1,-0.05,0.02,0.01,-0.01,-0.02
+wb6rAxDPWP_5AAl3CKCM1w,Insomnia Cookies,1,93101,5,0.1,0.31,0.31,0.3,0.47
+wb6rAxDPWP_5AAl3CKCM1w,Insomnia Cookies,1,93101,1,0,0.01,0.01,0.04,-0.05
+wb6rAxDPWP_5AAl3CKCM1w,Insomnia Cookies,1,93101,2,0,0,0.02,0,0
+wb6rAxDPWP_5AAl3CKCM1w,Insomnia Cookies,1,93101,4,-0.01,0.16,0.14,0.11,0.26
+wb6rAxDPWP_5AAl3CKCM1w,Insomnia Cookies,1,93101,3,-0.02,0.19,0.14,0.1,0.12
+UuRZpgZsHX7PyykHV3wbZg,Crushcakes & Cafe,1,93101,5,2.58,4.08,4.99,2.43,5.54
+UuRZpgZsHX7PyykHV3wbZg,Crushcakes & Cafe,1,93101,4,2.17,3.53,4.23,1.6,3.78
+UuRZpgZsHX7PyykHV3wbZg,Crushcakes & Cafe,1,93101,3,0.67,1.19,1.56,0.93,1.03
+UuRZpgZsHX7PyykHV3wbZg,Crushcakes & Cafe,1,93101,2,0.27,0.25,0.51,0.63,0.2
+UuRZpgZsHX7PyykHV3wbZg,Crushcakes & Cafe,1,93101,1,0.06,0.09,0.39,0.34,-0.04
+edDmC1Zcr5SVczbKBfiXqw,Montecito Village Grocery,1,93108,4,0.11,0.03,0.02,0,0.07
+edDmC1Zcr5SVczbKBfiXqw,Montecito Village Grocery,1,93108,5,0.03,0.05,0.08,0,0.07
+edDmC1Zcr5SVczbKBfiXqw,Montecito Village Grocery,1,93108,3,0.02,0,-0.01,0.08,0.02
+edDmC1Zcr5SVczbKBfiXqw,Montecito Village Grocery,1,93108,1,-0.02,0,-0,0,0.01
+edDmC1Zcr5SVczbKBfiXqw,Montecito Village Grocery,1,93108,2,-0.03,0,0.01,-0.02,0.01
+u9oG6CVhS9dJR5ZHS5q23A,The Little Things Bakery,1,93109,5,0.78,0.76,1.4,1.71,2.48
+u9oG6CVhS9dJR5ZHS5q23A,The Little Things Bakery,1,93109,1,0.02,0,0.03,0.06,0.01
+u9oG6CVhS9dJR5ZHS5q23A,The Little Things Bakery,1,93109,2,0.02,0,0.01,0,-0.01
+u9oG6CVhS9dJR5ZHS5q23A,The Little Things Bakery,1,93109,4,0.02,0.11,0.11,0.08,0.04
+u9oG6CVhS9dJR5ZHS5q23A,The Little Things Bakery,1,93109,3,0,-0.01,0.01,0,-0.01
+Ss6f5v_t5Vddiaz4ZOxL0g,Andersen's Danish Bakery & Restaurant,1,93101,5,5.35,4.45,6.74,3.15,11.68
+Ss6f5v_t5Vddiaz4ZOxL0g,Andersen's Danish Bakery & Restaurant,1,93101,4,2.76,1.93,3.38,1.98,4.73
+Ss6f5v_t5Vddiaz4ZOxL0g,Andersen's Danish Bakery & Restaurant,1,93101,3,0.8,0.75,1.24,0.54,1.02
+Ss6f5v_t5Vddiaz4ZOxL0g,Andersen's Danish Bakery & Restaurant,1,93101,2,0.37,0.17,0.61,0.42,0.15
+Ss6f5v_t5Vddiaz4ZOxL0g,Andersen's Danish Bakery & Restaurant,1,93101,1,0.11,0.14,0.29,0.13,-0.45
+iQ_JNYzwvhSsToR4EHl4cA,Le Macaron French Pastries,0,93101,4,0.16,0.1,0.18,0.2,0.2
+iQ_JNYzwvhSsToR4EHl4cA,Le Macaron French Pastries,0,93101,3,0.14,0.21,0.05,0.2,0.09
+iQ_JNYzwvhSsToR4EHl4cA,Le Macaron French Pastries,0,93101,5,0.13,0.16,0.21,0.19,0.19
+iQ_JNYzwvhSsToR4EHl4cA,Le Macaron French Pastries,0,93101,2,0,0.02,0.02,-0.02,-0.02
+iQ_JNYzwvhSsToR4EHl4cA,Le Macaron French Pastries,0,93101,1,-0.03,0.01,0,0,-0.04
+Y0izXh4Dv1_YU68tn43Xiw,Handlebar Coffee Roasters,1,93105,5,1.39,5.35,0.85,0.74,2.28
+Y0izXh4Dv1_YU68tn43Xiw,Handlebar Coffee Roasters,1,93105,4,0.36,1.02,0.33,0.2,0.59
+Y0izXh4Dv1_YU68tn43Xiw,Handlebar Coffee Roasters,1,93105,3,0.15,0.45,0.03,0.12,0.06
+Y0izXh4Dv1_YU68tn43Xiw,Handlebar Coffee Roasters,1,93105,2,0.11,0.02,-0.03,0,-0
+Y0izXh4Dv1_YU68tn43Xiw,Handlebar Coffee Roasters,1,93105,1,0,0.1,0.04,0.08,0.05
+B1yPXzIIJrLWyTcE4jsYuQ,Goat Tree,1,93101,5,1.46,0.79,1.53,0.5,2.69
+B1yPXzIIJrLWyTcE4jsYuQ,Goat Tree,1,93101,4,0.61,0.43,0.5,0.48,0.91
+B1yPXzIIJrLWyTcE4jsYuQ,Goat Tree,1,93101,3,0.36,0.15,0.25,0.21,0.13
+B1yPXzIIJrLWyTcE4jsYuQ,Goat Tree,1,93101,2,0.12,0.08,0.28,0.58,0.18
+B1yPXzIIJrLWyTcE4jsYuQ,Goat Tree,1,93101,1,0.04,-0.18,-0.01,-0.01,-0.27
+eA1-vRvk8eDf-nH9Ux_G_A,Whodelicious,0,93101,5,0.1,0.15,0.24,0.09,0.07
+eA1-vRvk8eDf-nH9Ux_G_A,Whodelicious,0,93101,1,0.08,0.02,0.07,0.08,0.02
+eA1-vRvk8eDf-nH9Ux_G_A,Whodelicious,0,93101,2,0.08,0.16,0.14,0.12,0.06
+eA1-vRvk8eDf-nH9Ux_G_A,Whodelicious,0,93101,4,0.08,0.08,0.21,0.03,0.11
+eA1-vRvk8eDf-nH9Ux_G_A,Whodelicious,0,93101,3,0.02,0.01,0.01,-0.01,0.01
+3tvi-OJ_-iK1ecjzSaH-oA,Hook And Press Donuts,1,93101,5,0.83,1.42,2.12,0.54,1.75
+3tvi-OJ_-iK1ecjzSaH-oA,Hook And Press Donuts,1,93101,4,0.3,0.32,0.63,0.25,0.34
+3tvi-OJ_-iK1ecjzSaH-oA,Hook And Press Donuts,1,93101,3,0.16,0.45,0.32,0.24,0.12
+3tvi-OJ_-iK1ecjzSaH-oA,Hook And Press Donuts,1,93101,2,0.03,0.14,0.05,0.07,0.08
+3tvi-OJ_-iK1ecjzSaH-oA,Hook And Press Donuts,1,93101,1,0.01,0,0,-0.05,-0.01
+PtaFDKkhxSjcXz6dVM0uLw,Deux Bakery,1,93103,5,0.32,0.43,0.8,0.4,0.6
+PtaFDKkhxSjcXz6dVM0uLw,Deux Bakery,1,93103,3,0.02,0.01,0.03,0,0.01
+PtaFDKkhxSjcXz6dVM0uLw,Deux Bakery,1,93103,1,0,0,0,0,-0.01
+PtaFDKkhxSjcXz6dVM0uLw,Deux Bakery,1,93103,2,0,0.01,0.02,0.01,0.02
+PtaFDKkhxSjcXz6dVM0uLw,Deux Bakery,1,93103,4,-0.01,0.05,0.07,0,0.08
+tiSIiacOzflrMMwJEXVFIA,Dunkin',0,93105,5,0.28,0.58,0.35,0.12,0.47
+tiSIiacOzflrMMwJEXVFIA,Dunkin',0,93105,3,0.18,0.14,0.12,0.32,0.16
+tiSIiacOzflrMMwJEXVFIA,Dunkin',0,93105,4,0.12,0.05,0.08,0.18,0.09
+tiSIiacOzflrMMwJEXVFIA,Dunkin',0,93105,1,-0.03,0.04,0.03,0.07,-0.05
+tiSIiacOzflrMMwJEXVFIA,Dunkin',0,93105,2,-0.03,0.14,0.08,0,0.08
+izSgTrqebu8bN8ONOCs6cQ,Oat Bakery,1,93101,5,0.57,0.4,1.23,2.32,2.23
+izSgTrqebu8bN8ONOCs6cQ,Oat Bakery,1,93101,4,0.06,0.12,0.11,0.06,0.08
+izSgTrqebu8bN8ONOCs6cQ,Oat Bakery,1,93101,2,0.02,0,-0,0,-0.01
+izSgTrqebu8bN8ONOCs6cQ,Oat Bakery,1,93101,1,0,0,0,0,0.01
+izSgTrqebu8bN8ONOCs6cQ,Oat Bakery,1,93101,3,0,0,0.01,0,-0
