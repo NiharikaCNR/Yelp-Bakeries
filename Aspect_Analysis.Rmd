@@ -140,20 +140,14 @@ write_csv(aspect_scores_by_star, "data/aspect_scores_by_star.csv")
 write_csv(aspect_scores_overall, "data/aspect_scores_overall.csv")
 ```
 
-```{r radar-chart-data}
-# library(fmsb)
-# max_min <- data.frame(
-#   Ambiance = c(20, -0.1), Drinks = c(22, -0.1), Food = c(22, -0.1), 
-#   Price = c(22, -0.1), Service = c(22, -0.1), row.names = c('max','min')
-# )
-
+```{r radar-chart-test}
 businesses <- c('max','min','average', 'Ss6f5v_t5Vddiaz4ZOxL0g', '9uJuBPIQyrC0v9pVv3JKRQ')
 sample <- as.data.frame(aspect_scores_overall) %>% filter(business_id %in% businesses) 
 rownames(sample) <- sample$business_id
 sample <- sample %>% select(-colnames(aspect_scores_overall)[seq(1:5)])
 ```
 
-```{r radar-chart-function}
+```{r custom-radar-chart-function}
 # radarchart(sample[c('max','min','average'),])
 
 beautiful_radarchart <- 
