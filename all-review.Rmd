@@ -4,27 +4,376 @@ author: "Siyan Wang"
 date: "2023-12-03"
 output: html_document
 ---
+We first discuss the closed store and then the opening store. Finally we compare the service and ambiance difference on between these two kind of bakery store.
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(tidytext)
+library(tidyverse)
+library(dplyr)
+library(wordcloud)
+library(stringr)
+library(reshape2)
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+# Read data
+```{r ,message=FALSE}
+all_review_data<-read_csv("bakery_reviews.csv")
+########## close data ###################
+close_data<-read_csv("all_closed_bakeries_reviews.csv")
+close_bad_review<-read_csv("all_closed_bakeries_negative_reviews.csv")
+close_good_review <- read_csv("all_closed_bakeries_positive_reviews.csv")
+############ open data ###################
+open_data<-read_csv("all_open_bakeries_reviews.csv")
+open_bad_review<-read_csv("all_open_bakeries_negative_reviews.csv")
+open_good_review <- read_csv("all_open_bakeries_positive_reviews.csv")
+########## dictionary #############
+food<- readLines("food.txt")
+drink<-readLines("drink.txt")
+ambiance<-readLines("ambiance.txt")
+service<-readLines("service.txt")
+par(mar = rep(0, 4)) # setting the margin
 ```
 
-## Including Plots
+## Word
+```{r}
+tidy_all_data<-all_review_data%>%
+  #select(-user_id,-review_id)%>%
+  unnest_tokens(word,text)%>% 
+  anti_join(stop_words)%>%
+  mutate(word = str_remove_all(word, "\\d+"))%>%
+  filter(!word %in% c("",'.',",","..","'",'food','service','time','santa','barbara'))
 
-You can also embed plots, for example:
+#all review wordcloud 
+# with(count(tidy_close_data,word),
+#      wordcloud(word,n,max.words = 100,
+#                colors=brewer.pal(8, "Dark2"),random.order = FALSE))
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+show(tidy_all_data%>%
+  count(word,sort = TRUE))
+```
+# closed store reviews analysis
+
+```{r,warning=FALSE,message=FALSE}
+
+#all closed reviews 
+
+tidy_close_data<-close_data%>%
+  #select(-user_id,-review_id)%>%
+  unnest_tokens(word,text)%>% 
+  anti_join(stop_words)%>%
+  mutate(word = str_remove_all(word, "\\d+"))%>%
+  filter(!word %in% c("",'.',",","..","'",'food','service','time','santa','barbara'))
+
+#all review wordcloud 
+with(count(tidy_close_data,word),
+     wordcloud(word,n,max.words = 100,
+               colors=brewer.pal(8, "Dark2"),random.order = FALSE))
+
+show(tidy_close_data%>%
+  count(word,sort = TRUE))
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+## CLOSE store positive review
+```{r,warning=FALSE,message=FALSE}
+
+#all reviews wordcloud
+
+tidy_close_good_data<-close_good_review%>%
+  #select(-user_id,-review_id)%>%
+  unnest_tokens(word,text)%>% 
+  anti_join(stop_words)%>%
+  mutate(word = str_remove_all(word, "\\d+"))%>%
+  filter(!word %in% c("",'.',",","..","'",'food','service','time','santa','barbara'))
+
+#all goodreview wordcloud 
+# with(count(tidy_good_data,word),
+#      wordcloud(word,n,max.words = 100,
+#                colors=brewer.pal(8, "Dark2")))
+
+show(tidy_close_good_data%>%
+  count(word,sort = TRUE))
+```
+
+
+```{r}
+tidy_close_good_data%>%
+  mutate(category = case_when(
+    word %in% food ~ "food",
+    word %in% drink ~ "drink",
+    word %in% ambiance ~"ambiance",
+    word %in% service ~ "service",
+    TRUE ~ "other"
+  ))%>%
+  filter(category != "other") %>%  
+  count(word,category,sort = TRUE)%>%
+  acast(word~category, value.var='n', fill=0)%>%
+  comparison.cloud(max.words = 100,title.size=2,rot.per=0)
+```
+### service 
+```{r}
+pattern <- paste(service, collapse = "|")
+pattern <- paste0("\\b(?:", pattern, ")\\b")
+
+service_word_good_reviews<-
+  # tidy_good_data%>%
+  # select(-user_id,-review_id,date)%>% #delete three columns for convenience
+  str_extract_all(tidy_good_data$word, pattern, simplify = TRUE)
+
+service_word_good_reviews<-unlist(service_word_good_reviews)
+  
+
+wordcloud(words = service_word_good_reviews, min.freq = 1, scale = c(3, 0.5), colors = brewer.pal(8, "Dark2"),rot.per=0,random.order = FALSE)
+```
+
+
+## CLOSE negative review
+
+```{r}
+tidy_close_bad_data<-close_bad_review%>%
+  #select(-user_id,-review_id)%>%
+  unnest_tokens(word,text)%>% 
+  anti_join(stop_words)%>%
+  mutate(word = str_remove_all(word, "\\d+"))%>%
+  filter(!word %in% c("",'.',",","..","'",'food','service','time','santa','barbara'))
+
+#all goodreview wordcloud 
+# with(count(tidy_good_data,word),
+#      wordcloud(word,n,max.words = 100,
+#                colors=brewer.pal(8, "Dark2")))
+
+show(tidy_close_bad_data%>%
+  count(word,sort = TRUE))
+```
+
+```{r}
+tidy_close_bad_data%>%
+  mutate(category = case_when(
+    word %in% food ~ "food",
+    word %in% drink ~ "drink",
+    word %in% ambiance ~"ambiance",
+    word %in% service ~ "service",
+    TRUE ~ "other"
+  ))%>%
+  filter(category != "other") %>%  
+  count(word,category,sort = TRUE)%>%
+  acast(word~category, value.var='n', fill=0)%>%
+  comparison.cloud(max.words = 100,title.size=2,rot.per=0)
+```
+
+```{r}
+service_close_bad_reviews<-
+  # tidy_good_data%>%
+  # select(-user_id,-review_id,date)%>% #delete three columns for convenience
+  str_extract_all(tidy_close_bad_data$word, pattern, simplify = TRUE)
+
+service_close_good_reviews<-unlist(service_close_bad_reviews)
+  
+
+wordcloud(words = service_close_bad_reviews, min.freq = 1, scale = c(3, 0.5), colors = brewer.pal(8, "Dark2"),rot.per=0)
+```
+
+## OPEN 
+```{r}
+#all open reviews 
+
+tidy_open_data<-open_data%>%
+  #select(-user_id,-review_id)%>%
+  unnest_tokens(word,text)%>% 
+  anti_join(stop_words)%>%
+  mutate(word = str_remove_all(word, "\\d+"))%>%
+  filter(!word %in% c("",'.',",","..","'",'food','service','time','santa','barbara'))
+
+#all review wordcloud 
+with(count(tidy_open_data,word),
+     wordcloud(word,n,max.words = 100,
+               colors=brewer.pal(8, "Dark2"),random.order = FALSE,rot.per=0))
+
+show(tidy_open_data%>%
+  count(word,sort = TRUE))
+```
+## OPEN store positive review
+
+```{r,warning=FALSE,message=FALSE}
+
+#all reviews wordcloud
+
+tidy_open_good_data<-open_good_review%>%
+  #select(-user_id,-review_id)%>%
+  unnest_tokens(word,text)%>% 
+  anti_join(stop_words)%>%
+  mutate(word = str_remove_all(word, "\\d+"))%>%
+  filter(!word %in% c("",'.',",","..","'",'food','service','time','santa','barbara'))
+
+#all goodreview wordcloud 
+# with(count(tidy_good_data,word),
+#      wordcloud(word,n,max.words = 100,
+#                colors=brewer.pal(8, "Dark2")))
+
+show(tidy_open_good_data%>%
+  count(word,sort = TRUE))
+```
+```{r}
+tidy_open_good_data%>%
+  mutate(category = case_when(
+    word %in% food ~ "food",
+    word %in% drink ~ "drink",
+    word %in% ambiance ~"ambiance",
+    word %in% service ~ "service",
+    TRUE ~ "other"
+  ))%>%
+  filter(category != "other") %>%  
+  count(word,category,sort = TRUE)%>%
+  acast(word~category, value.var='n', fill=0)%>%
+  comparison.cloud(max.words = 100,title.size=2,rot.per=0)
+```
+### service 
+
+```{r}
+# pattern <- paste(service, collapse = "|")
+# pattern <- paste0("\\b(?:", pattern, ")\\b")
+
+service_open_good_reviews<-
+  # tidy_good_data%>%
+  # select(-user_id,-review_id,date)%>% #delete three columns for convenience
+  str_extract_all(tidy_open_good_data$word, pattern, simplify = TRUE)
+
+service_open_good_reviews<-unlist(service_open_good_reviews)
+  
+
+wordcloud(words = service_open_good_reviews, min.freq = 1, scale = c(3, 0.5), colors = brewer.pal(8, "Dark2"),rot.per=0,random.order = FALSE)
+```
+## OPEN negative review
+
+```{r}
+tidy_open_bad_data<-open_bad_review%>%
+  #select(-user_id,-review_id)%>%
+  unnest_tokens(word,text)%>% 
+  anti_join(stop_words)%>%
+  mutate(word = str_remove_all(word, "\\d+"))%>%
+  filter(!word %in% c("",'.',",","..","'",'food','service','time','santa','barbara'))
+
+#all goodreview wordcloud 
+# with(count(tidy_good_data,word),
+#      wordcloud(word,n,max.words = 100,
+#                colors=brewer.pal(8, "Dark2")))
+
+show(tidy_open_bad_data%>%
+  count(word,sort = TRUE))
+```
+
+```{r}
+tidy_open_bad_data%>%
+  mutate(category = case_when(
+    word %in% food ~ "food",
+    word %in% drink ~ "drink",
+    word %in% ambiance ~"ambiance",
+    word %in% service ~ "service",
+    TRUE ~ "other"
+  ))%>%
+  filter(category != "other") %>%  
+  count(word,category,sort = TRUE)%>%
+  acast(word~category, value.var='n', fill=0)%>%
+  comparison.cloud(max.words = 100,title.size=2,rot.per=0)
+```
+
+```{r}
+service_open_bad_reviews<-
+  # tidy_good_data%>%
+  # select(-user_id,-review_id,date)%>% #delete three columns for convenience
+  str_extract_all(tidy_open_bad_data$word, pattern, simplify = TRUE)
+
+service_open_good_reviews<-unlist(service_word_bad_reviews)
+  
+
+wordcloud(words = service_open_bad_reviews, min.freq = 1, scale = c(3, 0.5), colors = brewer.pal(8, "Dark2"),rot.per=0,random.order = FALSE)
+```
+
+## Service analysis on open and close store
+
+```{r}
+all_data <- bind_rows(tidy_open_good_data %>% mutate(source = "open"),
+                      tidy_close_bad_data %>% mutate(source = "close"))
+#
+# 筛选包含在 "service" 字典中的词汇
+service_form <- all_data %>%
+  filter(word %in% service)%>%
+  mutate(category = case_when(
+    source == "open" ~ "open",
+    source == "close" ~ "close",
+    TRUE ~ NA_character_
+  ))%>%
+  select(word, category)%>%
+  count(word,category,sort = TRUE)%>%
+  acast(word~category, value.var='n', fill=0)%>%
+  prop.table( margin = 2)
+
+comparison.cloud(service_form,max.words = 100,title.size=2,rot.per=0)
+
+#print(service_form)
+#service_form<-rename(service_form, close =word)
+ 
+```
+
+## Food analysis on open and close store
+
+```{r}
+food_form <- all_data %>%
+  filter(word %in% food)%>%
+  mutate(category = case_when(
+    source == "open" ~ "open",
+    source == "close" ~ "close",
+    TRUE ~ NA_character_
+  ))%>%
+  select(word, category)%>%
+  count(word,category,sort = TRUE)%>%
+  acast(word~category, value.var='n', fill=0)%>%
+  prop.table( margin = 2)
+
+comparison.cloud(food_form,max.words = 100,title.size=2,rot.per=0)
+
+```
+## Drink analysis on open and close store
+
+That maybe have no sense
+
+```{r}
+drink_form <- all_data %>%
+  filter(word %in% drink)%>%
+  mutate(category = case_when(
+    source == "open" ~ "open",
+    source == "close" ~ "close",
+    TRUE ~ NA_character_
+  ))%>%
+  select(word, category)%>%
+  count(word,category,sort = TRUE)%>%
+  acast(word~category, value.var='n', fill=0)%>%
+  prop.table( margin = 2)
+
+comparison.cloud(drink_form,max.words = 100,title.size=2,rot.per=0)
+```
+## Ambiance analysis on open and close store
+
+```{r}
+ambiance_form <- all_data %>%
+  filter(word %in% ambiance)%>%
+  mutate(category = case_when(
+    source == "open" ~ "open",
+    source == "close" ~ "close",
+    TRUE ~ NA_character_
+  ))%>%
+  select(word, category)%>%
+  count(word,category,sort = TRUE)%>%
+  acast(word~category, value.var='n', fill=0)%>%
+  prop.table( margin = 2)
+
+comparison.cloud(ambiance_form,max.words = 100,title.size=2,rot.per=0)
+```
+
+
+
+
+
+
