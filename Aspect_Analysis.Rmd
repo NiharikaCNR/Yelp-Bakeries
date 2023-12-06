@@ -13,6 +13,7 @@ library(sf)
 library(jsonlite)
 library(tigris)
 library(tidycensus)
+library(naivebayes)
 
 tmap_mode("view")
 options(tigris_use_cache = TRUE)
@@ -197,7 +198,16 @@ for (i in 3:nrow(sample)) {
 par <- par(opar)
 ```
 
+```{r linear-model}
+model_data <- aspect_scores_by_star %>% na.omit() %>% mutate(stars = as.factor(stars))
+open_model <- lm(formula = stars~Ambiance+Drinks+Food+Price+Service, data = model_data %>% filter(is_open==1))
+closed_model <- lm(formula = stars~Ambiance+Drinks+Food+Price+Service, data = model_data %>% filter(is_open==0))
+```
 
+```{r}
+open_model
+```
 
-
-
+```{r}
+closed_model
+```
