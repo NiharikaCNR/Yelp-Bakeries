@@ -90,7 +90,7 @@ update_map <- function(y) {
   # Map-1: A map showing locations of open and closed bakeries in Santa Barbara, CA in year 'y'
   bakeries_map <- tm_shape(bakeries_map_data) + 
   tm_bubbles(
-    col='is_open_now', size='avg_rating', palette='Set1', alpha=0.7,scale=0.2, 
+    col='is_open_now', size='avg_rating', palette='Set1', alpha=0.7,scale=0.2, title.col = "Is Open Now?",
     popup.vars=c('Name'='name', 
                  'Average Rating:'='avg_rating', 
                  'Price Category:' = 'dollar_signs',
@@ -102,7 +102,7 @@ update_map <- function(y) {
   
   # Map-2: A map showing avg. incomes of open and closed bakeries in Santa Barbara, CA in year 'y'
   zipcode_income_map <- tm_shape(zipcode_map_data) +
-    tm_polygons(col=y, alpha = 0.6, palette='Greens', popup.vars=c('Avg. Income: '=y))
+    tm_polygons(col=y, alpha = 0.6, palette='Greens', popup.vars=c('Avg. Income: '=y), title="Average Income")
   # tmap_leaflet(zipcode_income_map)
   
   ## Final Map: Map-1 overlayed over Map-2 
@@ -229,7 +229,7 @@ Yelp, making it easy to be understood.'),
 
 map_page_body <- function() {
   fluidPage(
-    prettyRadioButtons('year', 'Select a year:', choices=rev(colnames(incomes)[-1]), selected='2019', inline=T),
+    prettyRadioButtons('year', 'Select a year (Click on a point for more info):', choices=rev(colnames(incomes)[-1]), selected='2019', inline=T),
     leafletOutput('income_bakeries_map', height = 700)
   )
 }
