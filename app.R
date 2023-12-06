@@ -149,7 +149,13 @@ update_radar_plot <- function(bakery_name, open_status) {
 
 generate_summary <- function(bakery_name) {
   if (bakery_name=="All") {
-    return (paste0('<h3>Please select a bakery for displaying summary</h3>'))
+    return (paste0('<h4>Please select a bakery to see summary</h4>',
+                   '<span>Reading the plot:</span><br>',
+                   '<ul>',
+                   '<li>Grey area represents the performance scores of all bakeries in Santa Barbara, CA.</li>',
+                   '<li>The purple plot represents the performance scores of the selected bakery. Choose one from the above drop-down.</li>',
+                   '<li>If a node of the purple polygon lie inside the grey region, it means that the selected bakery is performing poorly in that aspect as compared to the average score. If the node lies outside, then it is performing better than the others. (Note that this rule is to be read in reverse for the Price category)</li>',
+                   '</ul>'))
   }
   # bakery_name <- 'Helena Avenue Bakery'
   avg <- aspect_scores_overall[3,]
@@ -157,23 +163,23 @@ generate_summary <- function(bakery_name) {
   
   amb_text <- "Select a bakery to get summary"
   if((avg$Ambiance-selected$Ambiance)>0) {
-    amb_text <- "You need to make imporovements to your bakery ambiance."
+    amb_text <- "You need to make improvements to your bakery ambiance."
   }else {
-    amb_text <- "You are already outdoing other bakeries. Keep it up!"
+    amb_text <- "You are already outdoing other bakeries.<br>Keep it up!"
   }
   
   drinks_text <- "Select a bakery to get summary"
   if((avg$Drinks-selected$Drinks)>0) {
     drinks_text <- "You need to updates the quality and menu of the drinks you offer."
   }else {
-    drinks_text <- "You are already outdoing other bakeries. Keep it up!"
+    drinks_text <- "You are already outdoing other bakeries.<br>Keep it up!"
   }
   
   food_text <- "Select a bakery to get summary"
   if((avg$Food-selected$Food)>0) {
     food_text <- "You need to revisit the quality of your food."
   }else {
-    food_text <- "You are already outdoing other bakeries. Keep it up!"
+    food_text <- "You are already outdoing other bakeries.<br>Keep it up!"
   }
   
   price_text <- "Select a bakery to get summary"
@@ -187,29 +193,20 @@ generate_summary <- function(bakery_name) {
   if((avg$Service-selected$Service)>0) {
     service_text <- "Your staff and service needs to be more approachable."
   }else {
-    service_text <- "You are already outdoing other bakeries. Keep it up!"
+    service_text <- "You are already outdoing other bakeries.<br>Keep it up!"
   }
   
-  tags <- paste0('<font size="2.5"><span><b><u>Ambiance Summary:</u></b></span></font>',
-                 '<font size="2"><br>',amb_text,'</font><br>',
-                 '<font size="2.5"><span><b><u>Drinks Summary:</u></b></span></font>',
-                 '<font size="2"><br>',drinks_text,'</font><br>',
-                 '<font size="2.5"><span><b><u>Food Summary:</u></b></span></font>',
-                 '<font size="2"><br>',food_text,'</font><br>',
-                 '<font size="2.5"><span><b><u>Price Summary:</u></b></span></font>',
-                 '<font size="2"><br>',price_text,'</font><br>',
-                 '<font size="2.5"><span><b><u>Service Summary:</u></b></span></font>',
-                 '<font size="2"><br>',service_text,'</font>')
-  # tags <- (
-  #   tags$p("Ambiance: "),
-  #   tags$p("Drinks: "),
-  #   tags$p("Food: "),
-  #   tags$p("Price: "),
-  #   tags$p("Service: "),
-  # )
-  # if (bakery_name == "All"){
+  tags <- paste0('<font size="3"><span><b><u>Ambiance Summary:</u></b></span></font>',
+                 '<font size="3"><br>',amb_text,'</font><br>',
+                 '<font size="3"><span><b><u>Drinks Summary:</u></b></span></font>',
+                 '<font size="3"><br>',drinks_text,'</font><br>',
+                 '<font size="3"><span><b><u>Food Summary:</u></b></span></font>',
+                 '<font size="3"><br>',food_text,'</font><br>',
+                 '<font size="3"><span><b><u>Price Summary:</u></b></span></font>',
+                 '<font size="3"><br>',price_text,'</font><br>',
+                 '<font size="3"><span><b><u>Service Summary:</u></b></span></font>',
+                 '<font size="3"><br>',service_text,'</font>')
   return (tags)
-  # }
 }
 
 
@@ -246,7 +243,7 @@ radar_page_body <- function() {
           htmlOutput('open_summary')
         ),
         mainPanel(
-          plotOutput('open_radar_plot', height = '375px')
+          plotOutput('open_radar_plot', height = '430px')
         )
       )
     ),
@@ -258,7 +255,7 @@ radar_page_body <- function() {
           htmlOutput('closed_summary')
         ),
         mainPanel(
-          plotOutput('closed_radar_plot', height = '375px')
+          plotOutput('closed_radar_plot', height = '430px')
         )
       )
     )
